@@ -57,7 +57,7 @@
 
     <main>
       <section class="hero-section">
-        <div class="container">
+        <div class="container hero-container">
           <h1 class="hero-title">
             fresh harvest box<br />is your one-stop place for a delicious fruit
             basket
@@ -93,7 +93,11 @@
               class="hero-img"
             />
           </picture>
-          <button type="button" class="hero-shop-button">shop<br />now</button>
+          <a href="#fruits">
+            <button type="button" class="hero-shop-button">
+              shop<br />now
+            </button>
+          </a>
           <div class="hero-main-container">
             <div class="hero-left-side-wrapper">
               <p class="hero-text">
@@ -165,6 +169,76 @@
                 </li>
               </ul>
             </div>
+          </div>
+          <div class="hero-left-side-wrapper desk">
+            <p class="hero-text">
+              Our expertly curated fruit baskets are made with the freshest,
+              highest quality fruits available. Whether you are looking for a
+              healthy snack or a gift for a loved one, Fresh Harvest Box has got
+              you covered.
+            </p>
+            <div class="hero-card-container">
+              <h2 class="hero-card-title">Fruit</h2>
+              <img
+                srcset="
+                  ./img/hero/watermelon.png     1x,
+                  ./img/hero/watermelon_@2x.png 2x
+                "
+                src="./img/hero/watermelon.png"
+                alt="watermelon"
+              />
+              <div class="hero-card-img-boxshadow"></div>
+              <div class="hero-card-text">
+                Refreshing and juicy, watermelon is the perfect summer treat and
+                a great source of hydration
+              </div>
+            </div>
+          </div>
+          <div class="hero-ride-side-wrapper desk">
+            <ul class="hero-card-hashtag-list mob">
+              <li class="hero-card-hashtag-item">
+                <h3 class="hero-card-hashtag-title">#organic</h3>
+              </li>
+              <li class="hero-card-hashtag-item">
+                <h3 class="hero-card-hashtag-title">#products</h3>
+              </li>
+              <li class="hero-card-hashtag-item">
+                <h3 class="hero-card-hashtag-title">#basket</h3>
+              </li>
+              <li class="hero-card-hashtag-item">
+                <h3 class="hero-card-hashtag-title">#fruits</h3>
+              </li>
+            </ul>
+            <div class="hero-card-container yellow">
+              <h2 class="hero-card-title">Fruit</h2>
+              <img
+                srcset="
+                  ./img/hero/strawberries.png     1x,
+                  ./img/hero/strawberries_@2x.png 2x
+                "
+                src="./img/hero/strawberries.png"
+                alt="watermelon"
+              />
+              <div class="hero-card-img-boxshadow"></div>
+              <div class="hero-card-text">
+                Sweet and juicy, strawberries are packed with vitamin C and
+                antioxidants, making them a delicious and healthy snack
+              </div>
+            </div>
+            <ul class="hero-card-hashtag-list tablet">
+              <li class="hero-card-hashtag-item">
+                <h3 class="hero-card-hashtag-title">#organic</h3>
+              </li>
+              <li class="hero-card-hashtag-item">
+                <h3 class="hero-card-hashtag-title">#products</h3>
+              </li>
+              <li class="hero-card-hashtag-item">
+                <h3 class="hero-card-hashtag-title">#basket</h3>
+              </li>
+              <li class="hero-card-hashtag-item">
+                <h3 class="hero-card-hashtag-title">#fruits</h3>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -367,7 +441,7 @@
               <p class="fruits-list-price">90 UAH / kg</p>
             </li>
           </ul>
-          <button class="fruits-order-button" type="button">
+          <button class="fruits-order-button" data-modal-open type="button">
             <svg class="fruits-order-button-icon" width="14" height="14">
               <use href="./img/icon/symbol-defs.svg#down-arrow"></use>
             </svg>
@@ -378,7 +452,7 @@
 
       <!-- contacts section -->
       <section class="contacts-section" id="contacts">
-        <div class="container">
+        <div class="container contacts-container">
           <h2 class="contacts-title">Fresh Harvest Box has got you covered</h2>
           <div class="contacts-img-wrapper">
             <picture>
@@ -445,12 +519,18 @@
             </p>
             <form class="contacts-form">
               <input
+                pattern="^[\w.-]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,6})+$"
+                required
                 class="contacts-form-input"
                 type="email"
                 name="user-email"
                 placeholder="Enter email..."
               />
-              <button type="submit" class="contacts-form-submit-button">
+              <button
+                type="submit"
+                class="contacts-form-submit-button"
+                data-modal-thank-open
+              >
                 send
               </button>
             </form>
@@ -463,30 +543,32 @@
     <footer class="footer">
       <div class="container footer-container">
         <div class="footer-left-side-wrapper">
-          <picture>
-            <source
-              media="(min-width:768px)"
-              srcset="
-                ./img/footer/footer-desk-tablet-img.png     1x,
-                ./img/footer/footer-desk-tablet-img_@2x.png 2x
-              "
-              type="image/jpg"
-            />
-            <source
-              media="(max-width:767px)"
-              srcset="
-                ./img/footer/footer-mob-img.png     1x,
-                ./img/footer/footer-mob-img_@2x.png 2x
-              "
-              type="image/jpg"
-            />
-            <img src="./img/footer/footer-mob-img.png" alt="girl" />
-          </picture>
-          <div class="footer-logo-wrapper">
-            <svg class="footer-logo-icon" width="16" height="16">
-              <use href="./img/icon/symbol-defs.svg#logo"></use>
-            </svg>
-            <p class="footer-logo-text">fresh harvest box</p>
+          <div class="footer-main-left-side-wrapper">
+            <picture>
+              <source
+                media="(min-width:768px)"
+                srcset="
+                  ./img/footer/footer-desk-tablet-img.png     1x,
+                  ./img/footer/footer-desk-tablet-img_@2x.png 2x
+                "
+                type="image/jpg"
+              />
+              <source
+                media="(max-width:767px)"
+                srcset="
+                  ./img/footer/footer-mob-img.png     1x,
+                  ./img/footer/footer-mob-img_@2x.png 2x
+                "
+                type="image/jpg"
+              />
+              <img src="./img/footer/footer-mob-img.png" alt="girl" />
+            </picture>
+            <div class="footer-logo-wrapper">
+              <svg class="footer-logo-icon" width="16" height="16">
+                <use href="./img/icon/symbol-defs.svg#logo"></use>
+              </svg>
+              <p class="footer-logo-text">fresh harvest box</p>
+            </div>
           </div>
           <ul class="footer-nav-list">
             <li class="footer-nav-item">
@@ -537,12 +619,226 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                1678 S. Pioneer Road<br />Lake City UT<br />84104</a
+                1678 S. Pioneer Road Salt Lake City UT 84104</a
               >
             </li>
           </ul>
         </div>
       </div>
     </footer>
+
+    <!-- modal order window -->
+    <div class="overlay-order is-hidden" data-modal>
+      <div class="modal-order-window">
+        <div class="modal-order-header">
+          <h2 class="modal-order-title">Your Order</h2>
+          <button
+            type="button"
+            class="modal-order-close-button"
+            data-modal-close
+          >
+            <svg class="modal-order-close-icon" width="24" height="24">
+              <use href="./img/icon/symbol-defs.svg#close-modal"></use>
+            </svg>
+          </button>
+        </div>
+        <form class="mofal-order-form">
+          <div class="modal-order-fruits-form-wrapper">
+            <label class="modal-order-fruits-label"
+              ><div class="modal-order-label-left-wrapper">
+                <h3 class="modal-order-label-title">Strawberry Basket</h3>
+                <p class="modal-order-label-subtitle">Plant</p>
+              </div>
+              <picture>
+                <source
+                  media="(min-width:1280px)"
+                  srcset="
+                    ./img/modal-order/strawberry-desk.png     1x,
+                    ./img/modal-order/strawberry-desk_@2x.png 2x
+                  "
+                  type="image/png"
+                />
+                <source
+                  media="(min-width:768px)"
+                  srcset="
+                    ./img/modal-order/strawberry-tablet.png     1x,
+                    ./img/modal-order/strawberry-tablet_@2x.png 2x
+                  "
+                  type="image/png"
+                />
+                <source
+                  media="(max-width:767px)"
+                  srcset="
+                    ./img/modal-order/strawberry-mob.png     1x,
+                    ./img/modal-order/strawberry-mob_@2x.png 2x
+                  "
+                  type="image/png"
+                />
+                <img
+                  src="./img/modal-order/strawberry-mob.png"
+                  alt="strawberry"
+                  class="modal-order-lablel-strawberry"
+                />
+              </picture>
+              <input
+                type="checkbox"
+                class="modal-order-checkbox"
+                name="strawberry"
+                value="yes"
+              />
+            </label>
+            <label class="modal-order-fruits-label"
+              ><div class="modal-order-label-left-wrapper">
+                <h3 class="modal-order-label-title">Apple Basket</h3>
+                <p class="modal-order-label-subtitle">Plant</p>
+              </div>
+              <picture>
+                <source
+                  media="(min-width:1280px)"
+                  srcset="
+                    ./img/modal-order/apple-desk.png     1x,
+                    ./img/modal-order/apple-desk_@2x.png 2x
+                  "
+                  type="image/png"
+                />
+                <source
+                  media="(min-width:768px)"
+                  srcset="
+                    ./img/modal-order/apple-tablet.png     1x,
+                    ./img/modal-order/apple-tablet_@2x.png 2x
+                  "
+                  type="image/png"
+                />
+                <source
+                  media="(max-width:767px)"
+                  srcset="
+                    ./img/modal-order/apple-mob.png     1x,
+                    ./img/modal-order/apple-mob_@2x.png 2x
+                  "
+                  type="image/png"
+                />
+                <img src="./img/modal-order/apple-mob.png" alt="apple" />
+              </picture>
+              <input
+                type="checkbox"
+                class="modal-order-checkbox"
+                name="apple"
+                value="yes"
+              />
+            </label>
+            <label class="modal-order-fruits-label"
+              ><div class="modal-order-label-left-wrapper">
+                <h3 class="modal-order-label-title">Fruits Basket</h3>
+                <p class="modal-order-label-subtitle">Plant</p>
+              </div>
+              <picture>
+                <source
+                  media="(min-width:1280px)"
+                  srcset="
+                    ./img/modal-order/fruits-desk.png     1x,
+                    ./img/modal-order/fruits-desk_@2x.png 2x
+                  "
+                  type="image/png"
+                />
+                <source
+                  media="(min-width:768px)"
+                  srcset="
+                    ./img/modal-order/fruits-tablet.png     1x,
+                    ./img/modal-order/fruits-tablet_@2x.png 2x
+                  "
+                  type="image/png"
+                />
+                <source
+                  media="(max-width:767px)"
+                  srcset="
+                    ./img/modal-order/fruits-mob.png     1x,
+                    ./img/modal-order/fruits-mob_@2x.png 2x
+                  "
+                  type="image/png"
+                />
+                <img src="./img/modal-order/fruits-mob.png" alt="fruits" />
+              </picture>
+              <input
+                type="checkbox"
+                class="modal-order-checkbox"
+                name="fruits"
+                value="yes"
+              />
+            </label>
+          </div>
+          <input
+            type="text"
+            name="user-name"
+            placeholder="Enter full name..."
+            class="modal-order-input"
+          />
+          <input
+            type="email"
+            name="user-mail"
+            placeholder="Enter email..."
+            class="modal-order-input"
+          />
+          <input
+            type="number"
+            name="user-card"
+            placeholder="Enter card.."
+            class="modal-order-input"
+          />
+          <textarea
+            name="user-comments"
+            placeholder="Enter comments..."
+            class="modal-order-textarea"
+          ></textarea>
+          <button type="submit" class="modal-order-submit-button">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="overlay-thank is-hidden" data-thank-modal>
+      <div class="modal-window-thank">
+        <button
+          type="button"
+          class="modal-thank-close-button"
+          data-modal-thank-close
+        >
+          <svg class="modal-thank-close-icon" width="24" height="24">
+            <use href="./img/icon/symbol-defs.svg#close-modal"></use>
+          </svg>
+        </button>
+        <picture
+          ><source
+            media="(min-width:768px)"
+            srcset="
+              ./img/modal-thank/raspberries-thank-tab-desk.png     1x,
+              ./img/modal-thank/raspberries-thank-tab-desk_@2x.png 2x
+            "
+            type="image/png"
+          />
+          <source
+            media="(max-width:767px)"
+            srcset="
+              ./img/modal-thank/raspberries-thank-mob.png     1x,
+              ./img/modal-thank/raspberries-thank-mob_@2x.png 2x
+            "
+            type="image/png"
+          />
+          <img
+            src="./img/modal-thank/raspberries-thank-mob.png"
+            alt="raspberries"
+            class="modal-thank-img"
+          />
+        </picture>
+        <h2 class="modal-thank-title">thank you</h2>
+        <p class="modal-thank-subtitle">
+          Thank you for your order! Our team is preparing your box with fresh,
+          delicious fruits and vegetables, and we'll deliver it straight to your
+          doorstep. We appreciate your business and look forward to providing
+          you with the best possible experience!
+        </p>
+      </div>
+    </div>
+    <script src="./js/modal-order.js"></script>
+    <script src="./js/modal-thank.js"></script>
   </body>
 </html>
